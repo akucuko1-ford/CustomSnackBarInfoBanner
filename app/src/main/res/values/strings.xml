@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CustomSnackBar</string>
+    <string name="banner_string">This is some example message text. This is some example message text. </string>
+    <string name="cancel_text">Cancel</string>
+</resources>
