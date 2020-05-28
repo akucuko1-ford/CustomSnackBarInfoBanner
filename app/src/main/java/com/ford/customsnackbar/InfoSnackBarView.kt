@@ -6,7 +6,6 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.OvershootInterpolator
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -16,17 +15,17 @@ class InfoSnackBarView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-): ConstraintLayout(context, attrs, defStyleAttr), ContentViewCallback {
+) : ConstraintLayout(context, attrs, defStyleAttr), ContentViewCallback {
 
     private val icon: ImageView
     private val actionView: TextView
     private val dismissView: TextView
 
     init {
-        val view = View.inflate(context, R.layout.custom_info_banner, this)
-        icon = view.findViewById(R.id.banner_icon)
-        actionView = view.findViewById(R.id.learn_more_button)
-        dismissView = view.findViewById(R.id.cancel_button)
+        View.inflate(context, R.layout.custom_info_banner, this)
+        icon = findViewById(R.id.banner_icon)
+        actionView = findViewById(R.id.learn_more_button)
+        dismissView = findViewById(R.id.cancel_button)
     }
 
     fun getActionView(): TextView = actionView
