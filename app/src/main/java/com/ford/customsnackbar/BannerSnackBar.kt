@@ -43,7 +43,7 @@ class BannerSnackBar(
 
     companion object {
         @JvmStatic
-        fun make(view: View, @Duration duration: Int): BannerSnackBar {
+        fun make(view: View): BannerSnackBar {
             val parent = view.findSuitableParent() ?: throw IllegalArgumentException(
                 "No suitable parent found from the given view. Please provide a valid view."
             )
@@ -53,7 +53,7 @@ class BannerSnackBar(
                 parent,
                 customView
             ).apply {
-                this.duration = duration
+                duration = LENGTH_INDEFINITE
             }
         }
     }

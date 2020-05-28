@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClick(v: View) {
-        BannerSnackBar.make(main_view, LENGTH_INDEFINITE).apply {
+        BannerSnackBar.make(main_view).apply {
             setDismissAction()
             setMoreAction(View.OnClickListener {
                 println("more action has been clicked")
