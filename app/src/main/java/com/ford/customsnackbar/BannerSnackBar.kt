@@ -1,8 +1,10 @@
 package com.ford.customsnackbar
 
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.BaseTransientTopBar
 
@@ -14,14 +16,15 @@ class BannerSnackBar(
     init {
         getView().setBackgroundColor(ContextCompat.getColor(view.context, android.R.color.transparent))
         getView().setPadding(0, 0, 0, 0)
+        getView().layoutParams = (getView().layoutParams as FrameLayout.LayoutParams).apply { gravity = Gravity.TOP }
     }
 
-    fun setDismissAction(listener: View.OnClickListener): BannerSnackBar {
+    fun setDismissAction(listener: View.OnClickListener? = null): BannerSnackBar {
         val contentLayout = this.view.getChildAt(0) as InfoSnackBarView
         val btn = contentLayout.getDismissView()
         btn.visibility = View.VISIBLE
         btn.setOnClickListener {
-            listener.onClick(it)
+            listener?.onClick(it)
             dispatchDismiss(BaseCallback.DISMISS_EVENT_ACTION)
         }
         return this
