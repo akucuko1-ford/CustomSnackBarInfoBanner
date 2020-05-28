@@ -37,14 +37,32 @@
         app:layout_constraintBottom_toBottomOf="@id/banner_icon"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+    <TextView
         android:id="@+id/cancel_button"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/cancel_text"
-        android:textColor="@color/colorAccent"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="@id/banner_text"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:background="?attr/selectableItemBackground"
+        android:textColor="@color/colorRedAccent"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/shadow"/>
+
+    <TextView
+        android:id="@+id/learn_more_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/learn_more_text"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:background="?attr/selectableItemBackground"
+        android:textColor="@color/colorRedAccent"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toStartOf="@id/cancel_button"
         app:layout_constraintBottom_toBottomOf="@id/shadow"/>
 
     <View
