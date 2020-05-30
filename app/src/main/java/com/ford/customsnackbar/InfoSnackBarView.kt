@@ -20,12 +20,14 @@ class InfoSnackBarView @JvmOverloads constructor(
     private val icon: ImageView
     private val actionView: TextView
     private val dismissView: TextView
+    private val contextView: TextView
 
     init {
         View.inflate(context, R.layout.custom_info_banner, this)
         icon = findViewById(R.id.banner_icon)
         actionView = findViewById(R.id.learn_more_button)
         dismissView = findViewById(R.id.cancel_button)
+        contextView = findViewById(R.id.banner_text)
     }
 
     fun getActionView(): TextView = actionView
@@ -37,6 +39,12 @@ class InfoSnackBarView @JvmOverloads constructor(
     }
 
     override fun animateContentIn(delay: Int, duration: Int) {
+        val viewAlpha = ObjectAnimator.ofFloat(contextView, View.ALPHA, 0f, 1f)
+        AnimatorSet().apply {
+            this.duration = 500
+            playTogether(viewAlpha)
+            start()
+        }
         val scaleX = ObjectAnimator.ofFloat(icon, View.SCALE_X, 0f, 1f)
         val scaleY = ObjectAnimator.ofFloat(icon, View.SCALE_Y, 0f, 1f)
         AnimatorSet().apply {
