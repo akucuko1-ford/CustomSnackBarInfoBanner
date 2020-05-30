@@ -43,12 +43,14 @@ class BannerSnackBar(
 
     companion object {
         @JvmStatic
-        fun make(view: View): BannerSnackBar {
+        fun make(view: View, text: String, messageType: InfoSnackBarView.MessageType? = null): BannerSnackBar {
             val parent = view.findSuitableParent() ?: throw IllegalArgumentException(
                 "No suitable parent found from the given view. Please provide a valid view."
             )
             val customView = LayoutInflater.from(view.context)
                 .inflate(R.layout.layout_info_banner, parent, false) as InfoSnackBarView
+            customView.setText(text)
+            messageType?.let { customView.setMessageType(it) }
             return BannerSnackBar(
                 parent,
                 customView
