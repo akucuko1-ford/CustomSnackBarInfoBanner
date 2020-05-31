@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 
 abstract class BaseTransientTopBar<T : BaseTransientTopBar<T>>(
-    parent: ViewGroup,
+    private val parent: ViewGroup,
     content: View,
     private val contentViewCallback: com.google.android.material.snackbar.ContentViewCallback
 ) : BaseTransientBottomBar<T>(parent, content, contentViewCallback) {
@@ -25,6 +25,7 @@ abstract class BaseTransientTopBar<T : BaseTransientTopBar<T>>(
     }
 
     override fun onViewHidden(event: Int) {
+        parent.getChildAt(0).translationY = 0f
         if (view.visibility == View.VISIBLE && event != BaseCallback.DISMISS_EVENT_MANUAL) {
             startSlideOutAnimation(event)
         } else {
@@ -33,6 +34,7 @@ abstract class BaseTransientTopBar<T : BaseTransientTopBar<T>>(
     }
 
     private fun startSlideInAnimation() {
+        parent.getChildAt(0).translationY = view.height.toFloat()
         val translationYBottom = view.height * -1f
         view.translationY = translationYBottom
         ValueAnimator().apply {
