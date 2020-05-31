@@ -1,2 +1,3 @@
+include ':bannerview'
 rootProject.name='CustomSnackBar'
 include ':app'

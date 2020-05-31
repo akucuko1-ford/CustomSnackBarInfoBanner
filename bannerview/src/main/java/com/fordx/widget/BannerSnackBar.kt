@@ -1,4 +1,4 @@
-package com.ford.customsnackbar
+package com.fordx.widget
 
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -19,6 +19,7 @@ class BannerSnackBar(
         getView().layoutParams = (getView().layoutParams as FrameLayout.LayoutParams).apply { gravity = Gravity.TOP }
     }
 
+    @JvmOverloads
     fun setDismissAction(listener: View.OnClickListener? = null): BannerSnackBar {
         val contentLayout = this.view.getChildAt(0) as InfoSnackBarView
         val btn = contentLayout.getDismissView()
@@ -42,7 +43,7 @@ class BannerSnackBar(
     }
 
     companion object {
-        @JvmStatic
+        @[JvmStatic JvmOverloads]
         fun make(view: View, text: String, messageType: InfoSnackBarView.MessageType? = null): BannerSnackBar {
             val parent = view.findSuitableParent() ?: throw IllegalArgumentException(
                 "No suitable parent found from the given view. Please provide a valid view."

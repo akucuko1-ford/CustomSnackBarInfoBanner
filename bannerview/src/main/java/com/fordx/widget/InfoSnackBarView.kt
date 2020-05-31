@@ -1,4 +1,4 @@
-package com.ford.customsnackbar
+package com.fordx.widget
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
