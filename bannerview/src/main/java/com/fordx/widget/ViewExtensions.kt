@@ -1,4 +1,4 @@
-package com.ford.customsnackbar
+package com.fordx.widget
 
 import android.view.View
 import android.view.ViewGroup
