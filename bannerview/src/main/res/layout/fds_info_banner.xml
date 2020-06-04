@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorRedAccent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fds_banner_icon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_error_message"
+        app:layout_constraintBottom_toBottomOf="@id/view_background"
+        app:layout_constraintStart_toStartOf="@id/view_background"
+        app:layout_constraintTop_toTopOf="@id/view_background" />
+
+    <TextView
+        android:id="@+id/fds_banner_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/banner_string_fds"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/fds_banner_icon"
+        app:layout_constraintEnd_toStartOf="@id/banner_action_icon"
+        app:layout_constraintStart_toEndOf="@id/fds_banner_icon"
+        app:layout_constraintTop_toTopOf="@id/fds_banner_icon" />
+
+    <ImageView
+        android:id="@+id/banner_action_icon"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_banner_learn_more"
+        android:layout_marginEnd="24dp"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintTop_toTopOf="@id/fds_banner_icon"
+        app:layout_constraintBottom_toBottomOf="@id/fds_banner_icon"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</merge>

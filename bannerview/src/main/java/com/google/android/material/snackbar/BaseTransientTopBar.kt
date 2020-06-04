@@ -10,7 +10,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 abstract class BaseTransientTopBar<T : BaseTransientTopBar<T>>(
     private val parent: ViewGroup,
     content: View,
-    private val contentViewCallback: com.google.android.material.snackbar.ContentViewCallback
+    private val contentViewCallback: com.fordx.widget.ContentViewCallback
 ) : BaseTransientBottomBar<T>(parent, content, contentViewCallback) {
 
     private var shouldAnimate = true
@@ -49,6 +49,7 @@ abstract class BaseTransientTopBar<T : BaseTransientTopBar<T>>(
 
                 override fun onAnimationEnd(animation: Animator?) {
                     onViewShown()
+                    contentViewCallback.onContextAnimationEnd()
                 }
             })
             addUpdateListener {

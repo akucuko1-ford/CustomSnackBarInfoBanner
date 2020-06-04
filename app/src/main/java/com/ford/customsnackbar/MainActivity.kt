@@ -1,10 +1,9 @@
 package com.ford.customsnackbar
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.fordx.widget.BannerSnackBar
+import com.fordx.widget.FdsBannerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,12 +14,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClick(v: View) {
-        BannerSnackBar.make(main_view, getString(R.string.banner_string)).apply {
-            setDismissAction()
-            setMoreAction(View.OnClickListener {
-                println("more action has been clicked")
-                startActivity(Intent(this@MainActivity, LearnMoreActivity::class.java))
-            })
-        }.show()
+        FdsBannerView.make(main_view).setActionView().show()
     }
 }

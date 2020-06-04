@@ -1,5 +1,6 @@
 <resources>
     <string name="banner_string">This is some example message text. This is some example message text. </string>
+    <string name="banner_string_fds">This is some example text.</string>
     <string name="cancel_text">Dismiss</string>
     <string name="learn_more_text">Learn More</string>
 </resources>

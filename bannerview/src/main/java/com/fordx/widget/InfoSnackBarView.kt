@@ -10,7 +10,6 @@ import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.google.android.material.snackbar.ContentViewCallback
 
 class InfoSnackBarView @JvmOverloads constructor(
     context: Context,
@@ -63,6 +62,9 @@ class InfoSnackBarView @JvmOverloads constructor(
     fun getActionView(): TextView = actionView
 
     fun getDismissView(): TextView = dismissView
+
+    override fun onContextAnimationEnd() {
+    }
 
     override fun animateContentOut(delay: Int, duration: Int) {
 //        TODO("Not yet implemented")
